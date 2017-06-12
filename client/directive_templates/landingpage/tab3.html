@@ -1,0 +1,230 @@
+<!-- <div>
+    LANDING PAGE tab1 template....
+</div> -->
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="alert alert-success" ng-show="msg">{{msg}}</div> 
+        <div style="text-align:right">
+            <button class="btn btn-primary" ng-disabled="addmn" ng-hide="projectAddmode" ng-click="projectCreate()">Add</button>
+            <button class="btn btn-primary" ng-disabled="editmn" ng-hide="projectEditmode" ng-click="edit(nm)">Edit</button>
+            <button class="btn btn-primary" ng-disabled="deletemn" ng-hide="projectDeletemode" ng-click="delete(nm._id)">Delete</button>
+        </div>
+        <div ng-show="projectShowaddform">
+            <form name="projectaddform" role="form" ng-submit="projectDetailSave(projectaddform)">
+                <div class="form-group">
+                    <div class="form-group-box col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="projName">Project Name :</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="projName" type="text" class="form-control" id="addform_signum" ng-model="projectaddform.projName" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="name">Prob Of Deal:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="probOfDeal" type="text" class="form-control" id="addform_name" ng-model="projectaddform.probOfDeal" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="jobStage">Region:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="region" type="text" class="form-control" id="addform_jobStage" ng-model="projectaddform.region" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="role">Manager:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="manager" type="text" class="form-control" id="addform_manager" ng-model="projectaddform.manager" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="type">Director:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="Director" type="text" class="form-control" id="addform_Director" ng-model="projectaddform.Director" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="start_dt">Start Date:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="start_dt" type="text" class="form-control" id="addform_location" ng-model="projectaddform.start_dt" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="end_dt">End Date:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="end_dt" type="text" class="form-control" id="addform_end_dt" ng-model="projectaddform.end_dt" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="subProduct">Remarks:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="remarks" type="text" class="form-control" id="addform_subProduct" ng-model="projectaddform.remarks" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="status">Status:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="status" type="text" class="form-control" id="addform_EGI_LM" ng-model="projectaddform.status" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="EGIStaffing">EGI Staffing:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="EGIStaffing" type="text" class="form-control" id="addform_EGIStaffing" ng-model="projectaddform.EGIStaffing" />
+                            </div>
+                        </div>
+                         
+                        
+                    </div>
+                    <div class="form-group form-group-right">
+                        <button type="submit" ngClick="Submit" ng-disabled="addform.$pristine" class="btn btn-success"  value="Submit">ADD</button>
+                        <button type="button" class="btn btn-warning" ng-click="projectCancel()">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+            <!--Edit form -->
+        <div ng-show="projectShoweditform">
+            <form name="editform" role="form" ng-submit="updateEmp(rowUnderEdit, rowUnderEdit._id);" >
+<div class="form-group">
+                    <div class="form-group-box col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="signum">Project Name :</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="projName" type="text" class="form-control" id="addform_signum" ng-model="addform.projName" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="name">Prob Of Deal:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="probOfDeal" type="text" class="form-control" id="addform_name" ng-model="addform.probOfDeal" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="jobStage">Region:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="region" type="text" class="form-control" id="addform_jobStage" ng-model="addform.region" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="role">Manager:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="manager" type="text" class="form-control" id="addform_manager" ng-model="addform.manager" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="type">Director:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="Director" type="text" class="form-control" id="addform_Director" ng-model="addform.Director" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="start_dt">Start Date:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="start_dt" type="text" class="form-control" id="addform_location" ng-model="addform.start_dt" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="end_dt">End Date:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="end_dt" type="text" class="form-control" id="addform_end_dt" ng-model="addform.end_dt" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="subProduct">Remarks:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="remarks" type="text" class="form-control" id="addform_subProduct" ng-model="addform.remarks" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="status">Status:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="status" type="text" class="form-control" id="addform_EGI_LM" ng-model="addform.status" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="EGIStaffing">EGI Staffing:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="EGIStaffing" type="text" class="form-control" id="addform_EGIStaffing" ng-model="addform.EGIStaffing" />
+                            </div>
+                        </div>
+                         
+                        
+                    </div>
+                    <div class="form-group form-group-right">
+                        <button type="submit" ngClick="Submit" ng-disabled="addform.$pristine" class="btn btn-success"  value="Submit">ADD</button>
+                        <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                    </div>
+            </form>
+        </div>
+        <br/>
+
+
+        <span ng-class="{mcls:checked}">{{nm.id}}</span>
+    </div>
+</div>
+
+
+<div class="x_content">
+
+    <div class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+        <div class="dt-buttons btn-group"><a class="btn btn-default buttons-copy buttons-html5 btn-sm" tabindex="0" aria-controls="datatable-buttons" href=""><span>Copy</span></a><a class="btn btn-default buttons-csv buttons-html5 btn-sm" tabindex="0" aria-controls="datatable-buttons" href="#"><span>Excel</span></a><a class="btn btn-default buttons-print btn-sm" tabindex="0" aria-controls="datatable-buttons" href="#" ><span>Print</span></a>
+        </div>
+        <div id="datatable-buttons_filter" class="dataTables_filter">
+            <label>Global Search:
+             <input type="search" ng-model="q" id="search" class="form-control input-sm" placeholder="Filter text">
+                 
+            </label>
+        </div>
+        <table id="datatable-buttons" class="table table-striped table-bordered dataTable no-footer dtr-inline" role="grid" aria-describedby="datatable-buttons_info">
+            <thead>
+                <tr role="row">
+                    <th>Select</th>
+                    <th>Project Name</th>
+                    <th>Prob Of Deal</th>
+                    <th>Region</th>
+                    <th>Manager</th>
+                    <th>Director</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Remarks</th>
+                    <th>Status</th>
+                    <th>EGI Staffing</th>
+                    
+
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+            <tr  dir-paginate="nm in projDetailCollection | filter:q | itemsPerPage: pageSize" current-page="currentPage" role="row" ng-class="{mcls:nm.checked}"> 
+
+                <!--<tr  class="odd" ng-repeat="nm in MyRecCollection" ng-class="{mcls:nm.checked}"> -->
+                    <td>
+                        <input ng-disabled="editmode" type="radio" value="{{nm._id}}" name="ip" ng-model="nm.checked" ng-click="resetAll(nm)" />
+                    </td>
+                    <td>{{nm.projName}}</td>
+                    <td>{{nm.probOfDeal}}</td>
+                    <td>{{nm.region}}</td>
+                    <td>{{nm.manager}}</td>
+                    <td>{{nm.Director}}</td>
+                    <td>{{nm.start_dt}}</td>
+                    <td>{{nm.end_dt}}</td>
+                    <td>{{nm.remarks}}</td>
+                    <td>{{nm.status}}</td>
+                    <td>{{nm.EGIStaffing}}</td>
+                     
+ 
+
+                </tr>
+            </tbody>
+        </table>
+        <div class="dataTables_info" id="datatable-buttons_info" role="status" aria-live="polite">Showing 1 to 6 of 20 entries</div>
+        <div class="dataTables_paginate paging_simple_numbers" id="datatable-buttons_paginate">
+           <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="../app/directives/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+    </div>
+</div>

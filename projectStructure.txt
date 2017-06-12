@@ -1,0 +1,154 @@
+Project Structure:
+-------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------
+File										Purpose
+---------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+//Emp Details (module): 
+------------------------------------------------------------------------------------------------------
+
+ "empprofile" : [ 
+        {
+            "signum" : "ezabeei",
+            "Name" : "Badrinath S",
+            "Jstage" : "5",
+            "role" : "SSI",
+            "Location" : "chennai",
+            "CurrentProject" : "CTL-Lion",
+            "Team_Name" : "OSS-SF-EOC",
+			"EGI_LM"	: "Kiran Narayana",
+            "Pool" : [ 
+                "Fixed", 
+                "Flex"
+            ],
+            "Exp_dtls" : [ 
+                {
+                    "Tot_exp" : "15",
+                    "EOC_exp" : "25",
+                    "ECM_exp" : "20",
+                    "HO_month" : "20"
+                }
+            ]
+        }
+		]
+		
+
+
+// Project Details (module):
+------------------------------------------------------------------------------------------------------
+"Project_dtls" : [ 
+        {
+            "projId" : "1",
+            "projName" : "Charter-EXPO",
+            "probOfDeal" : "100%",
+            "Region" : "RNAM",
+            "BU" : "CSI ADM",
+            "Dept" : "",
+            "RNAM_Mgr" : "Anthony",
+            "RNAM_Director" : "Zahid",
+            "Status" : "Forecasted",
+            "EGIStaffing" : "TBD"
+        }
+		
+
+-- Project Utils:
+------------------------------------------------------------------------------------------------------
+ "_id" : ObjectId("591ece43836b4924bae18296"),
+    "projId" : "1",
+    "projName" : "CTL_LION",
+    "start_dt" : "2016-05-01",
+    "end_dt" : " 2018-05-31",
+    "Year" : "2016",
+    "Need_Gap_dtls" : [ 
+        {
+            "Jan_Need" : "",
+            "Jan_Gap" : "",
+            "Feb_Need" : "",
+            "Feb_Gap" : "",
+            "Mar_Need" : "",
+            "Mar_Gap" : "",
+            "Apr_Need" : "",
+            "Apr_Gap" : "",
+            "May_Need" : "",
+            "May_Gap" : "",
+            "Jun_Need" : "",
+            "Jun_Gap" : "",
+            "Jul_Need" : "",
+            "Jul_Gap" : "",
+            "Aug_Need" : "",
+            "Aug_Gap" : "",
+            "Sep_Need" : "",
+            "Sep_Gap" : "",
+            "Oct_Need" : "",
+            "Oct_Gap" : "",
+            "Nov_Need" : "",
+            "Nov_Gap" : "",
+            "Dec_Need" : "",
+            "Dec_Gap" : ""
+        }
+    ]
+
+
+-- Emp Utillization:
+------------------------------------------------------------------------------------------------------
+{
+    "_id" : ObjectId("591ece43836b4924bae18296"),
+    "Signum" : "ezabeei",
+    "Name" : "Badrinath S",
+    "projName" : "CTL_LION",
+    "Location" : "Chennai",
+    "Work_Loc" : "Offshore",
+    "Year" : "2016",
+    "Mapping_dtls" : [ 
+       project1: [
+		{projectName:""},
+        {
+            "Jan" : "",
+            "Feb" : "",
+            "Mar" : "",
+            "Apr" : "",
+            "May" : "1.0",
+            "Jun" : "",
+            "Jul" : "",
+            "Aug" : "",
+            "Sep" : "",
+            "Oct" : "",
+            "Nov" : "",
+            "Dec" : ""
+        }],
+        project2: [ 
+        {projectName:""},
+        {
+            "Jan" : "",
+            "Feb" : "",
+            "Mar" : "",
+            "Apr" : "",
+            "May" : "1.0",
+            "Jun" : "",
+            "Jul" : "",
+            "Aug" : "",
+            "Sep" : "",
+            "Oct" : "",
+            "Nov" : "",
+            "Dec" : ""
+        }]
+    ]
+}

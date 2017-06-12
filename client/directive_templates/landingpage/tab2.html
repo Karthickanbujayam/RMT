@@ -1,0 +1,375 @@
+<!--<div>
+	LANDING PAGE tab2 template....
+	{{parentName}} 
+</div> -->
+
+<!-- <div>
+    LANDING PAGE tab1 template....
+</div> -->
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="alert alert-success" ng-show="msg">{{msg}}</div> 
+        <div style="text-align:right">
+            <button class="btn btn-primary" ng-disabled="addmn" ng-hide="empUtzAddmode" ng-click="empUtzCreate()">Assign Project</button>
+            <button class="btn btn-primary" ng-disabled="editmn" ng-hide="empUtzEditmode" ng-click="edit(nm)">Edit</button>
+            <button class="btn btn-primary" ng-disabled="deletemn" ng-hide="empUtzDeletemode" ng-click="delete(nm._id)">Delete</button>
+        </div>
+        <div ng-show="empUtzShowaddform">
+            <form name="addEmpUtzform" role="form" ng-submit="empUtzSave(addEmpUtzform)">
+                <div class="form-group">
+                    <div class="form-group-box col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="signum">signum :</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="signum" type="text" class="form-control" id="addform_signum" ng-model="addEmpUtzform.signum" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="name">name:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="name" type="text" class="form-control" id="addEmpUtzform_name" ng-model="addEmpUtzform.name" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="approvedbyRNAMOSS">approvedbyRNAMOSS:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="jobStage" type="text" class="form-control" id="approvedbyRNAMOSS" ng-model="addEmpUtzform.approvedbyRNAMOSS" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="role">CU:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="CU" type="text" class="form-control" id="CU" ng-model="addEmpUtzform.CU" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="type">location:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="location" type="text" class="form-control" id="location" ng-model="addEmpUtzform.location" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="status">status:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="status" type="text" class="form-control" id="status" ng-model="addEmpUtzform.status" />
+                            </div>
+                        </div>
+                        
+                       
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                        <div class="monthsDetails">
+                            <label class="control-label  col-xs-12" for="mapping_dtls">mapping_dtls:</label>
+                            <div>
+                                 
+                                   <table class="mappingTable col-md-12">
+                                     <thead> 
+	                                   <tr>
+                                       <td>Year <input type="checkbox" ng-model="year.isselected"/></td>
+	                                 	 <td>Jan <input type="checkbox" ng-model="jan.isselected"/></td>
+	                                 	 <td>Feb <input type="checkbox" ng-model="feb.isselected"/></td>
+	                                 	 <td>Mar <input type="checkbox" ng-model="mar.isselected"/></td>
+	                                 	 <td>Apr <input type="checkbox" ng-model="apr.isselected"/></td>
+	                                 	 <td>May <input type="checkbox" ng-model="may.isselected"/></td>
+	                                 	 <td>Jun <input type="checkbox" ng-model="jun.isselected"/></td>
+	                                 	 <td>Jul <input type="checkbox" ng-model="jul.isselected"/></td>
+	                                 	 <td>Aug <input type="checkbox" ng-model="aug.isselected"/></td>
+	                                 	 <td>Sep <input type="checkbox" ng-model="sep.isselected"/></td>
+	                                 	 <td>Oct <input type="checkbox" ng-model="oct.isselected"/></td>
+	                                 	 <td>Nov <input type="checkbox" ng-model="nov.isselected"/></td>
+	                                 	 <td>Dec <input type="checkbox" ng-model="dec.isselected"/></td>
+	                                 	</tr>
+                                 		</thead>
+                                 		<tbody>
+                                 			<tr>
+
+                                                <td>  
+                                                  <select class="form-control" ng-disabled="!year.isselected" ng-model="addEmpUtzform.year">
+                                                    <option selected="selected">Choose</option>
+                                                    <option>2015</option>
+                                                    <option>2016</option>
+                                                    <option>2017</option>
+                                                    <option>2018</option>
+                                                  </select></td>
+                                 				<td><select class="form-control" ng-disabled="!jan.isselected" ng-model="addEmpUtzform.jan">
+                                                    <option>0.0</option>
+                                                    <option>0.2</option>
+                                                    <option>0.4</option>
+                                                    <option>0.6</option>
+                                                    <option>0.8</option>
+                                                    <option>1.0</option>
+                                                  </select></td>
+                                 				 <td><select class="form-control" ng-disabled="!feb.isselected" ng-model="addEmpUtzform.feb">
+                                                    <option>0.0</option>
+                                                    <option>0.2</option>
+                                                    <option>0.4</option>
+                                                    <option>0.6</option>
+                                                    <option>0.8</option>
+                                                    <option>1.0</option>
+                                                  </select></td>
+                                                  <td><select class="form-control" ng-disabled="!mar.isselected" ng-model="addEmpUtzform.mar">
+                                                    <option>0.0</option>
+                                                    <option>0.2</option>
+                                                    <option>0.4</option>
+                                                    <option>0.6</option>
+                                                    <option>0.8</option>
+                                                    <option>1.0</option>
+                                                  </select></td>
+                                                  <td><select class="form-control" ng-disabled="!apr.isselected" ng-model="addEmpUtzform.apr">
+                                                    <option>0.0</option>
+                                                    <option>0.2</option>
+                                                    <option>0.4</option>
+                                                    <option>0.6</option>
+                                                    <option>0.8</option>
+                                                    <option>1.0</option>
+                                                  </select></td>
+                                                  <td><select class="form-control" ng-disabled="!may.isselected" ng-model="addEmpUtzform.may">
+                                                    <option>0.0</option>
+                                                    <option>0.2</option>
+                                                    <option>0.4</option>
+                                                    <option>0.6</option>
+                                                    <option>0.8</option>
+                                                    <option>1.0</option>
+                                                  </select></td>
+                                                  <td><select class="form-control" ng-disabled="!jun.isselected" ng-model="addEmpUtzform.jun">
+                                                    <option>0.0</option>
+                                                    <option>0.2</option>
+                                                    <option>0.4</option>
+                                                    <option>0.6</option>
+                                                    <option>0.8</option>
+                                                    <option>1.0</option>
+                                                  </select></td>
+                                                  <td><select class="form-control" ng-disabled="!jul.isselected" ng-model="addEmpUtzform.jul">
+                                                    <option>0.0</option>
+                                                    <option>0.2</option>
+                                                    <option>0.4</option>
+                                                    <option>0.6</option>
+                                                    <option>0.8</option>
+                                                    <option>1.0</option>
+                                                  </select></td>
+                                                <td><select class="form-control" ng-disabled="!aug.isselected" ng-model="addEmpUtzform.aug">
+                                                    <option>0.0</option>
+                                                    <option>0.2</option>
+                                                    <option>0.4</option>
+                                                    <option>0.6</option>
+                                                    <option>0.8</option>
+                                                    <option>1.0</option>
+                                                  </select></td>
+                                                  <td><select class="form-control" ng-disabled="!sep.isselected" ng-model="addEmpUtzform.sep">
+                                                    <option>0.0</option>
+                                                    <option>0.2</option>
+                                                    <option>0.4</option>
+                                                    <option>0.6</option>
+                                                    <option>0.8</option>
+                                                    <option>1.0</option>
+                                                  </select></td>
+                                                  <td><select class="form-control" ng-disabled="!oct.isselected" ng-model="addEmpUtzform.oct">
+                                                    <option>0.0</option>
+                                                    <option>0.2</option>
+                                                    <option>0.4</option>
+                                                    <option>0.6</option>
+                                                    <option>0.8</option>
+                                                    <option>1.0</option>
+                                                  </select></td>
+                                                  <td><select class="form-control" ng-disabled="!nov.isselected" ng-model="addEmpUtzform.nov">
+                                                    <option>0.0</option>
+                                                    <option>0.2</option>
+                                                    <option>0.4</option>
+                                                    <option>0.6</option>
+                                                    <option>0.8</option>
+                                                    <option>1.0</option>
+                                                  </select></td>
+                                                  <td><select class="form-control" ng-disabled="!dec.isselected" ng-model="addEmpUtzform.dec">
+                                                    <option>0.0</option>
+                                                    <option>0.2</option>
+                                                    <option>0.4</option>
+                                                    <option>0.6</option>
+                                                    <option>0.8</option>
+                                                    <option>1.0</option>
+                                                  </select></td>
+                                                                                 
+
+                                 			</tr>
+                                 		</tbody>
+                                 	</table>
+                                  
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-right">
+                        <button type="submit" ngClick="Submit" ng-disabled="addform.$pristine" class="btn btn-success"  value="Submit">Save</button>
+                        <button type="button" class="btn btn-warning" ng-click="empUtzCancel()">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+            <!--Edit form -->
+        <div ng-show="empUtzShoweditform">
+            <form name="editEmpUtzform" role="form" ng-submit="createEmpUtz(addEmpUtzform)">
+                 <div class="form-group">
+                    <div class="form-group-box col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="signum">signum :</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="signum" type="text" class="form-control" id="addform_signum" ng-model="addEmpUtzform.signum" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="name">name:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="name" type="text" class="form-control" id="addEmpUtzform_name" ng-model="addEmpUtzform.name" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="approvedbyRNAMOSS">approvedbyRNAMOSS:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="jobStage" type="text" class="form-control" id="approvedbyRNAMOSS" ng-model="addEmpUtzform.approvedbyRNAMOSS" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="role">CU:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="CU" type="text" class="form-control" id="CU" ng-model="addEmpUtzform.CU" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="type">location:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="location" type="text" class="form-control" id="location" ng-model="addEmpUtzform.location" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="status">status:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="status" type="text" class="form-control" id="status" ng-model="addEmpUtzform.status" />
+                            </div>
+                        </div>
+                        
+                       
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="mapping_dtls">mapping_dtls:</label>
+                            <div>
+                                 <div class="col-md-12 col-md-offset-2">
+                                   <table class="mappingTable">
+                                     <thead> 
+                                       <tr>
+                                         <td>Jan <input type="checkbox" ng-model="student1.isselected"/></td>
+                                         <td>Feb <input type="checkbox" ng-model="student2.isselected"/></td>
+                                         <td>Mar <input type="checkbox" ng-model="student3.isselected"/></td>
+                                         <td>Apr <input type="checkbox" ng-model="student4.isselected"/></td>
+                                         <td>May <input type="checkbox" ng-model="student5.isselected"/></td>
+                                         <td>Jun <input type="checkbox" ng-model="student6.isselected"/></td>
+                                         <td>Jul <input type="checkbox" ng-model="student7.isselected"/></td>
+                                         <td>Aug <input type="checkbox" ng-model="student8.isselected"/></td>
+                                         <td>Sep <input type="checkbox" ng-model="student9.isselected"/></td>
+                                         <td>Oct <input type="checkbox" ng-model="student10.isselected"/></td>
+                                         <td>Nov <input type="checkbox" ng-model="student11.isselected"/></td>
+                                         <td>Dec <input type="checkbox" ng-model="student12.isselected"/></td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><input class="monthInput" type="text" ng-disabled="!student1.isselected" value=""  /></td>
+                                                <td><input class="monthInput" type="text" ng-disabled="!student2.isselected" value=""  /></td>
+                                                <td><input class="monthInput" type="text" ng-disabled="!student3.isselected" value=""  /></td>
+                                                <td><input class="monthInput" type="text" ng-disabled="!student4.isselected" value=""  /></td>
+                                                <td><input class="monthInput" type="text" ng-disabled="!student5.isselected" value=""  /></td>
+                                                <td><input class="monthInput" type="text" ng-disabled="!student6.isselected" value=""  /></td>
+                                                <td><input class="monthInput" type="text" ng-disabled="!student7.isselected" value=""  /></td>
+                                                <td><input class="monthInput" type="text" ng-disabled="!student8.isselected" value=""  /></td>
+                                                <td><input class="monthInput" type="text" ng-disabled="!student9.isselected" value=""  /></td>
+                                                <td><input class="monthInput" type="text" ng-disabled="!student10.isselected" value=""  /></td>
+                                                <td><input class="monthInput" type="text" ng-disabled="!student11.isselected" value=""  /></td>
+                                                <td><input class="monthInput" type="text" ng-disabled="!student12.isselected" value=""  /></td>                                 
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                 </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-right">
+                       <button type="submit" ng-disabled="editform.$pristine" class="btn btn-success" ng-click="save()" value="Submit">Update</button>
+                        <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br/>
+
+
+        <span ng-class="{mcls:checked}">{{nm.id}}</span>
+    </div>
+</div>
+
+
+<div class="x_content">
+
+    <div class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+        <div class="dt-buttons btn-group"><a class="btn btn-default buttons-copy buttons-html5 btn-sm" tabindex="0" aria-controls="datatable-buttons" href=""><span>Copy</span></a><a class="btn btn-default buttons-csv buttons-html5 btn-sm" tabindex="0" aria-controls="datatable-buttons" href="#"><span>Excel</span></a><a class="btn btn-default buttons-print btn-sm" tabindex="0" aria-controls="datatable-buttons" href="#" ><span>Print</span></a>
+        </div>
+        <div id="datatable-buttons_filter" class="dataTables_filter">
+            <label>Global Search:
+             <input type="search" ng-model="q" id="search" class="form-control input-sm" placeholder="Filter text">
+                 
+            </label>
+        </div>
+        <table id="datatable-buttons" class="table table-striped table-bordered dataTable no-footer dtr-inline" role="grid" aria-describedby="datatable-buttons_info">
+            <thead>
+                <tr role="row">
+                    <th>Select</th>
+                    <th>signum</th>
+                    <th>name</th>
+                    <th>approvedbyRNAMOSS</th>
+                    <th>CU</th>
+                    <th>location</th>
+                    <th>status</th> 
+                    <th>Year</th>
+                    <th>Jan</th>
+                    <th>Feb</th>
+                    <th>Mar</th>
+                    <th>Apr</th>
+                    <th>May</th>
+                    <th>Jun</th>
+                    <th>Jul</th>
+                    <th>Aug</th>
+                    <th>Oct</th>
+                    <th>Sep</th>
+                    <th>nov</th>
+                    <th>Dec</th>                             
+               </tr>
+            </thead>
+
+
+            <tbody>
+
+            <tr  dir-paginate="EmpUtz in RecEmpUtzCollection | filter:q | itemsPerPage: pageSize" current-page="currentPage" role="row" ng-class="{mcls:EmpUtz.checked}"> 
+
+                <!--<tr  class="odd" ng-repeat="nm in MyRecCollection" ng-class="{mcls:nm.checked}"> -->
+                    <td>
+                        <input ng-disabled="editmode" type="radio" value="{{EmpUtz._id}}" name="ip" ng-model="EmpUtz.checked" ng-click="resetAll(EmpUtz)" />
+                    </td>
+                    <td>{{EmpUtz.signum}}</td>
+                    <td>{{EmpUtz.name}}</td>
+                    <td>{{EmpUtz.approvedbyRNAMOSS}}</td>
+                    <td>{{EmpUtz.CU}}</td>
+                    <td>{{EmpUtz.location}}</td>
+                    <td>{{EmpUtz.status}}</td>
+                    <td>{{EmpUtz.mapping_dtls[0].year}}</td> 
+                    <td ng-repeat = "month in EmpUtz.mapping_dtls[0].months">{{month.value}}</td>
+                    
+ 
+
+                </tr>
+            </tbody>
+        </table>
+        <div class="dataTables_info" id="datatable-buttons_info" role="status" aria-live="polite">Showing 1 to 6 of 20 entries</div>
+        <div class="dataTables_paginate paging_simple_numbers" id="datatable-buttons_paginate">
+           <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="../app/directives/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+    </div>
+</div>

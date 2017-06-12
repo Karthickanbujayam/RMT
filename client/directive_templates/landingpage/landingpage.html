@@ -1,0 +1,35 @@
+<div class="col-md-12 col-sm-12 col-xs-12" ng-controller="landingpage">
+	<!--LANDING PAGE template....
+	{{test}} -->
+<!--
+	<tabset>
+	  <tab ng-repeat="tab in tabs" select="go(tab.route)" ui-sref-active="tab.active" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
+	    <ui-view></ui-view>
+	  </tab>
+	</tabset>
+-->
+<div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+	 <div class="topnav col-md-12 col-sm-12 col-xs-12" id="myTopnav">
+         <span class="menuList" ui-sref=".tab1"><a href="#/tab1" ng-class="{active:isActive('/tab1')}">Employee Details</a></span>
+         <span class="menuList" ui-sref=".tab2"><a href="#/tab2" ng-class="{active:isActive('/tab2')}">Employee Utilization</a></span>
+         <span class="menuList" ui-sref=".tab3"><a href="#/tab3" ng-class="{active:isActive('/tab3')}">Project Details</a></span>
+         <span class="menuList" ui-sref=".tab3"><a href="#/tab4" ng-class="{active:isActive('/tab4')}">Project Utilization</a></span>
+     </div>
+     <div ui-view="">
+     <div style=" text-decoration: underline; margin-top: 6%; ">
+     <h1>One network for a million needs</h1></div>
+<div style="font-size: 16px; ">Success for operators is built on a flexible and efficient infrastructure that enables millions of different use cases. Our network solutions help operators build offerings towards new value chains, support millions of different services and devices and work perfectly – where ever people want to connect.</div>
+     	<MARQUEE DIRECTION=LEFT style="
+    margin-top: 12%;
+    font-size: 18px;">Hi Hello!. Advertisements will be comes here..........! </MARQUEE>
+     </div>
+    </div>
+</div>
+     
+     
+
+
+
+
+</div>

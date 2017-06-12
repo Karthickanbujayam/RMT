@@ -1,0 +1,219 @@
+
+
+<div>
+   LANDING PAGE tab1 template.... 
+</div>
+<div class="row">
+   <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="alert alert-success" ng-show="msg">{{msg}}</div>
+      <h4>Please select an row to edit:</h4>
+      <div style="text-align:right">
+         <button class="btn btn-primary" ng-disabled="editmn" ng-hide="addmode" ng-click="Add()">Add</button>
+         <button class="btn btn-primary" ng-disabled="editmn" ng-hide="editmode" ng-click="edit()">Edit</button>
+      </div>
+      <form name="editform" role="form"  ng-show="editmode">
+
+      <div class="form-group">
+          <div class="form-group-box col-md-12 col-sm-12 col-xs-12">            
+            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+               <label class="control-label col-md-4 col-sm-4 col-xs-12" for="signum">signum :</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">   
+               <input name="nm" type="text" id="nm" ng-model="rowUnderEdit.signum" />
+               </div>
+            </div>
+
+            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+               <label class="control-label col-md-4 col-sm-4 col-xs-12"  for="pnt">name:</label>  
+               <div class="col-md-6 col-sm-6 col-xs-12">  
+               <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.name" />
+               </div>
+            </div>
+            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+               <label class="control-label col-md-4 col-sm-4 col-xs-12"for="pnt">jobStage:</label>  
+               <div class="col-md-6 col-sm-6 col-xs-12">  
+               <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.jobStage" />
+               </div>
+            </div>
+            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+               <label class="control-label col-md-4 col-sm-4 col-xs-12" for="pnt">role:</label>   
+               <div class="col-md-6 col-sm-6 col-xs-12"> 
+               <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.role" />
+               </div>
+            </div>
+            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+               <label class="control-label col-md-4 col-sm-4 col-xs-12" for="pnt">type:</label>  
+               <div class="col-md-6 col-sm-6 col-xs-12">  
+               <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.type" />
+               </div>
+            </div>
+            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+               <label class="control-label col-md-4 col-sm-4 col-xs-12" for="pnt">location:</label>
+               <div class="col-md-6 col-sm-6 col-xs-12">    
+               <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.location" />
+               </div>
+            </div>
+            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+               <label class="control-label col-md-4 col-sm-4 col-xs-12" for="pnt">businessArea:</label>  
+               <div class="col-md-6 col-sm-6 col-xs-12">  
+               <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.businessArea" />
+               </div>
+            </div>
+            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+               <label class="control-label col-md-4 col-sm-4 col-xs-12" for="pnt">subProduct:</label>   
+               <div class="col-md-6 col-sm-6 col-xs-12"> 
+               <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.subProduct" />
+               </div>
+            </div>
+            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+               <label class="control-label col-md-4 col-sm-4 col-xs-12" for="pnt">EGI_LM:</label>
+               <div class="col-md-6 col-sm-6 col-xs-12">    
+               <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.EGI_LM" />
+               </div>
+            </div>
+            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+               <label class="control-label col-md-4 col-sm-4 col-xs-12" for="pnt">approvedbyRNAMOSS:</label> 
+               <div class="col-md-6 col-sm-6 col-xs-12">   
+               <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.approvedbyRNAMOSS" />
+               </div>
+            </div>
+            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+               <label class="control-label col-md-4 col-sm-4 col-xs-12" for="pnt">currentStatus:</label>   
+               <div class="col-md-6 col-sm-6 col-xs-12"> 
+               <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.currentStatus" />
+               </div>
+            </div>
+            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+               <label class="control-label col-md-4 col-sm-4 col-xs-12" for="pnt">pool:</label>   
+               <div class="col-md-6 col-sm-6 col-xs-12"> 
+               <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.pool" />
+               </div>
+            </div> 
+         </div>
+         <div class="form-froup">
+            <button type="button" ng-disabled="editform.$pristine" class="btn btn-success" ng-click="save()">Save</button>
+            <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+         </div>
+      </form>
+      <br/>
+        <!--
+      <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered dataTable" id="example" aria-describedby="example_info">
+         <thead>
+            <th>Select for editing</th> 
+            <th>signum</th>
+            <th>name</th>
+            <th>jobStage</th>
+            <th>role</th>
+            <th>type</th>
+            <th>location</th>
+            <th>businessArea</th>
+            <th>subProduct</th>
+            <th>EGI_LM</th>
+            <th>approvedbyRNAMOSS</th>
+            <th>currentStatus</th>
+            <th>pool</th>
+            
+
+         </thead>
+         <tbody>
+            <tr ng-repeat="nm in MyRecCollection"  ng-class="{mcls:nm.checked}">
+               <td>
+                  <input ng-disabled="editmode" type="radio" value="{{nm._id}}" name="ip" ng-model="nm.checked" ng-click="resetAll(nm)" />
+               </td> 
+               <td>{{nm.signum}}</td>
+               <td>{{nm.name}}</td>
+               <td>{{nm.jobStage}}</td>
+               <td>{{nm.role}}</td>
+               <td>{{nm.type}}</td>
+               <td>{{nm.location}}</td>
+               <td>{{nm.businessArea}}</td>
+               <td>{{nm.subProduct}}</td>
+               <td>{{nm.EGI_LM}}</td>
+               <td>{{nm.approvedbyRNAMOSS}}</td>
+               <td>{{nm.currentStatus}}</td>
+               <td>{{nm.pool}}</td>
+               
+              
+            </tr>
+         </tbody> 
+      </table>
+       -->
+      <span ng-class="{mcls:checked}">{{nm.id}}</span>
+   </div>
+</div>
+ 
+
+<div class="x_content">
+    
+    <div id="datatable-buttons_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+        <div class="dt-buttons btn-group"><a class="btn btn-default buttons-copy buttons-html5 btn-sm" tabindex="0" aria-controls="datatable-buttons" href="#"><span>Copy</span></a><a class="btn btn-default buttons-csv buttons-html5 btn-sm" tabindex="0" aria-controls="datatable-buttons" href="#"><span>CSV</span></a><a class="btn btn-default buttons-print btn-sm" tabindex="0" aria-controls="datatable-buttons" href="#"><span>Print</span></a>
+        </div>
+        <div id="datatable-buttons_filter" class="dataTables_filter">
+            <label>Search:
+                <input type="search" class="form-control input-sm" placeholder="" aria-controls="datatable-buttons">
+            </label>
+        </div>
+        <table id="datatable-buttons" class="table table-striped table-bordered dataTable no-footer dtr-inline" role="grid" aria-describedby="datatable-buttons_info" style="width: 1031px;">
+            <thead>
+                <tr role="row">
+                  <th>Select for editing</th> 
+                  <th>signum</th>
+                  <th>name</th>
+                  <th>jobStage</th>
+                  <th>role</th>
+                  <th>type</th>
+                  <th>location</th>
+                  <th>businessArea</th>
+                  <th>subProduct</th>
+                  <th>EGI_LM</th>
+                  <th>approvedbyRNAMOSS</th>
+                  <th>currentStatus</th>
+                  <th>pool</th> 
+                </tr>
+            </thead>
+
+
+            <tbody>
+                <tr role="row" class="odd" ng-repeat="nm in MyRecCollection" ng-class="{mcls:nm.checked}">
+                    <td>
+                        <input ng-disabled="editmode" type="radio" value="{{nm._id}}" name="ip" ng-model="nm.checked" ng-click="resetAll(nm)" />
+                    </td>
+                    <td>{{nm.signum}}</td>
+                    <td>{{nm.name}}</td>
+                    <td>{{nm.jobStage}}</td>
+                    <td>{{nm.role}}</td>
+                    <td>{{nm.type}}</td>
+                    <td>{{nm.location}}</td>
+                    <td>{{nm.businessArea}}</td>
+                    <td>{{nm.subProduct}}</td>
+                    <td>{{nm.EGI_LM}}</td>
+                    <td>{{nm.approvedbyRNAMOSS}}</td>
+                    <td>{{nm.currentStatus}}</td>
+                    <td>{{nm.pool}}</td>
+
+
+                </tr>
+            </tbody>
+        </table>
+        <div class="dataTables_info" id="datatable-buttons_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+        <div class="dataTables_paginate paging_simple_numbers" id="datatable-buttons_paginate">
+            <ul class="pagination">
+                <li class="paginate_button previous disabled" id="datatable-buttons_previous"><a href="#" aria-controls="datatable-buttons" data-dt-idx="0" tabindex="0">Previous</a>
+                </li>
+                <li class="paginate_button active"><a href="#" aria-controls="datatable-buttons" data-dt-idx="1" tabindex="0">1</a>
+                </li>
+                <li class="paginate_button "><a href="#" aria-controls="datatable-buttons" data-dt-idx="2" tabindex="0">2</a>
+                </li>
+                <li class="paginate_button "><a href="#" aria-controls="datatable-buttons" data-dt-idx="3" tabindex="0">3</a>
+                </li>
+                <li class="paginate_button "><a href="#" aria-controls="datatable-buttons" data-dt-idx="4" tabindex="0">4</a>
+                </li>
+                <li class="paginate_button "><a href="#" aria-controls="datatable-buttons" data-dt-idx="5" tabindex="0">5</a>
+                </li>
+                <li class="paginate_button "><a href="#" aria-controls="datatable-buttons" data-dt-idx="6" tabindex="0">6</a>
+                </li>
+                <li class="paginate_button next" id="datatable-buttons_next"><a href="#" aria-controls="datatable-buttons" data-dt-idx="7" tabindex="0">Next</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

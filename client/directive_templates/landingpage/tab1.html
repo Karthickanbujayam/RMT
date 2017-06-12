@@ -1,0 +1,254 @@
+<!-- <div>
+    LANDING PAGE tab1 template....
+</div> -->
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="alert alert-success" ng-show="msg">{{msg}}</div> 
+        <div style="text-align:right">
+            <button class="btn btn-primary" ng-disabled="addmn" ng-hide="addmode" ng-click="create()">Add</button>
+            <button class="btn btn-primary" ng-disabled="editmn" ng-hide="editmode" ng-click="edit(nm)">Edit</button>
+            <button class="btn btn-primary" ng-disabled="deletemn" ng-hide="deletemode" ng-click="delete(nm._id)">Delete</button>
+        </div>
+        <div ng-show="showaddform">
+            <form name="addform" role="form" ng-submit="createEmp(addform)">
+                <div class="form-group">
+                    <div class="form-group-box col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="signum">signum :</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="signum" type="text" class="form-control" id="addform_signum" ng-model="addform.signum" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="name">name:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="name" type="text" class="form-control" id="addform_name" ng-model="addform.name" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="jobStage">jobStage:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="jobStage" type="text" class="form-control" id="addform_jobStage" ng-model="addform.jobStage" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="role">role:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="role" type="text" class="form-control" id="addform_role" ng-model="addform.role" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="type">type:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="type" type="text" class="form-control" id="addform_type" ng-model="addform.type" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="location">location:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="location" type="text" class="form-control" id="addform_location" ng-model="addform.location" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="businessArea">businessArea:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="businessArea" type="text" class="form-control" id="addform_businessArea" ng-model="addform.businessArea" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="subProduct">subProduct:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="subProduct" type="text" class="form-control" id="addform_subProduct" ng-model="addform.subProduct" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="EGI_LM">EGI_LM:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="EGI_LM" type="text" class="form-control" id="addform_EGI_LM" ng-model="addform.EGI_LM" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="approvedbyRNAMOSS">approvedbyRNAMOSS:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="approvedbyRNAMOSS" type="text" class="form-control" id="addform_approvedbyRNAMOSS" ng-model="addform.approvedbyRNAMOSS" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="currentStatus">currentStatus:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="currentStatus" type="text" class="form-control" id="currentStatus" ng-model="addform.currentStatus" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="pool">pool:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="pool" type="text" class="form-control" id="addform_pool" ng-model="addform.pool" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-right">
+                        <button type="submit" ngClick="Submit" ng-disabled="addform.$pristine" class="btn btn-success"  value="Submit">ADD</button>
+                        <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+            <!--Edit form -->
+        <div ng-show="showeditform">
+            <form name="editform" role="form" ng-submit="updateEmp(rowUnderEdit, rowUnderEdit._id);" >
+
+                <div class="form-group">
+                    <div class="form-group-box col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="signum">signum :</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="nm" type="text" id="nm" ng-model="rowUnderEdit.signum" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="name">name:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.name" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="jobStage">jobStage:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.jobStage" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="role">role:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.role" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="type">type:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.type" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="location">location:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.location" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="businessArea">businessArea:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.businessArea" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="subProduct">subProduct:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.subProduct" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="EGI_LM">EGI_LM:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.EGI_LM" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="approvedbyRNAMOSS">approvedbyRNAMOSS:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.approvedbyRNAMOSS" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="currentStatus">currentStatus:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.currentStatus" />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="pool">pool:</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input name="pt" type="text" id="pnt" ng-model="rowUnderEdit.pool" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-right ">
+                        <button type="submit" ng-disabled="editform.$pristine" class="btn btn-success" ng-click="save()" value="Submit">Update</button>
+                        <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br/>
+
+
+        <span ng-class="{mcls:checked}">{{nm.id}}</span>
+    </div>
+</div>
+
+
+<div class="x_content">
+
+    <div class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+        <div class="dt-buttons btn-group"><a class="btn btn-default buttons-copy buttons-html5 btn-sm" tabindex="0" aria-controls="datatable-buttons" href=""><span>Copy</span></a><a class="btn btn-default buttons-csv buttons-html5 btn-sm" tabindex="0" aria-controls="datatable-buttons" href="#"><span>Excel</span></a><a class="btn btn-default buttons-print btn-sm" tabindex="0" aria-controls="datatable-buttons" href="#" ><span>Print</span></a>
+        </div>
+        <div id="datatable-buttons_filter" class="dataTables_filter">
+            <label>Global Search:
+             <input type="search" ng-model="q" id="search" class="form-control input-sm" placeholder="Filter text">
+                 
+            </label>
+        </div>
+        <table id="datatable-buttons" class="table table-striped table-bordered dataTable no-footer dtr-inline" role="grid" aria-describedby="datatable-buttons_info">
+            <thead>
+                <tr role="row">
+                    <th>Select</th>
+                    <th>signum</th>
+                    <th>name</th>
+                    <th>jobStage</th>
+                    <th>role</th>
+                    <th>type</th>
+                    <th>location</th>
+                    <th>businessArea</th>
+                    <th>subProduct</th>
+                    <th>EGI_LM</th>
+                    <th>approvedbyRNAMOSS</th>
+                    <th>currentStatus</th>
+                    <th>pool</th>
+
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+            <tr  dir-paginate="nm in MyRecCollection | filter:q | itemsPerPage: pageSize" current-page="currentPage" role="row" ng-class="{mcls:nm.checked}"> 
+
+                <!--<tr  class="odd" ng-repeat="nm in MyRecCollection" ng-class="{mcls:nm.checked}"> -->
+                    <td>
+                        <input ng-disabled="editmode" type="radio" value="{{nm._id}}" name="ip" ng-model="nm.checked" ng-click="resetAll(nm)" />
+                    </td>
+                    <td>{{nm.signum}}</td>
+                    <td>{{nm.name}}</td>
+                    <td>{{nm.jobStage}}</td>
+                    <td>{{nm.role}}</td>
+                    <td>{{nm.type}}</td>
+                    <td>{{nm.location}}</td>
+                    <td>{{nm.businessArea}}</td>
+                    <td>{{nm.subProduct}}</td>
+                    <td>{{nm.EGI_LM}}</td>
+                    <td>{{nm.approvedbyRNAMOSS}}</td>
+                    <td>{{nm.currentStatus}}</td>
+                    <td>{{nm.pool}}</td>
+ 
+
+                </tr>
+            </tbody>
+        </table>
+        <div class="dataTables_info" id="datatable-buttons_info" role="status" aria-live="polite">Showing 1 to 6 of 20 entries</div>
+        <div class="dataTables_paginate paging_simple_numbers" id="datatable-buttons_paginate">
+           <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="../app/directives/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+    </div>
+</div>

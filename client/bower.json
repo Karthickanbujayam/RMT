@@ -1,0 +1,59 @@
+{
+  "name": "ericsson",
+  "homepage": "https://github.com/Karthik-Anburaj-ERC/resourceManagementTool/client/index.html",
+  "authors": [
+    "Karthik-Anburaj-ERC"
+  ],
+  "description": "Ericsson | resource Management Tool",
+  "keywords": [
+    "css",
+    "js",
+    "html",
+    "bootstrap",
+    "backend",
+    "responsive"
+  ],
+  "license": "ERC",
+  "ignore": [
+    "**/.*",
+    "documentation"
+  ],
+  "devDependencies": {},
+  "resolutions": {
+    "jquery": "^3.2.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "nprogress": "^0.2.0",
+    "bootstrap-progressbar": "^0.9.0",
+    "iCheck": "icheck#^1.0.2",
+    "skycons": "*",
+    "morris.js": "^0.5.1",
+    "select2": "^4.0.3",
+    "autosize": "^3.0.20",
+    "normalize-css": "^7.0.0",
+    "pnotify": "^3.2.0",
+    "jquery.easy-pie-chart": "^2.1.6",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
+    "fastclick": "^1.0.6",
+    "angular": "1.6.4",
+    "requirejs": "^2.3.3",
+    "angularAMD": "^0.2.1",
+    "angular-animate": "^1.6.4",
+    "angular-resource": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "angular-mocks": "^1.6.4",
+    "angular-sanitize": "^1.6.4",
+    "angular-touch": "^1.6.4",
+    "angular-ui-grid": "ng-grid#^4.0.4",
+    "domReady": "requirejs-domready#^2.0.1",
+    "angular-bootstrap": "^2.5.0",
+    "bower": "*",
+    "install": "^1.0.4",
+    "angular-ui-router": "1.0.3",
+    "dirPagination": "1.0.0",
+    "smartwizard": "^4.2.2"
+  }
+}
