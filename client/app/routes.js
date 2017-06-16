@@ -30,7 +30,8 @@ define(['./app'], function(app) {
             url: '/landingpage',
             templateUrl: 'directive_templates/landingpage/landingpage.html',
             controller: 'landingpage'
-        }).state('landingpage.tab1',{
+        })
+        .state('landingpage.tab1',{
             url: '/tab1',
             templateUrl: 'directive_templates/landingpage/tab1.html' 
         })
@@ -41,6 +42,10 @@ define(['./app'], function(app) {
         .state('landingpage.tab3',{
             url: '/tab3',
             templateUrl: 'directive_templates/landingpage/tab3.html' 
+        })
+        .state('landingpage.tab4',{
+            url: '/tab4',
+            templateUrl: 'directive_templates/landingpage/tab4.html' 
         });
 
         $urlRouterProvider.otherwise("/dashboard");

@@ -60,9 +60,8 @@
                         <div class="form-group col-md-12 col-sm-12 col-xs-12">
                         <div class="monthsDetails">
                             <label class="control-label  col-xs-12" for="mapping_dtls">mapping_dtls:</label>
-                            <div>
-                                 
-                                   <table class="mappingTable col-md-12">
+                            <div> 
+                            <table class="mappingTable" >
                                      <thead> 
 	                                   <tr>
                                        <td>Year <input type="checkbox" ng-model="year.isselected"/></td>
@@ -252,7 +251,8 @@
                             <label class="control-label col-md-4 col-sm-4 col-xs-12" for="mapping_dtls">mapping_dtls:</label>
                             <div>
                                  <div class="col-md-12 col-md-offset-2">
-                                   <table class="mappingTable">
+                                  <div class="table-responsive"> 
+                                   <table class="table table-striped table-bordered dataTable no-footer dtr-inline" role="grid" aria-describedby="datatable-buttons_info mappingTable" >
                                      <thead> 
                                        <tr>
                                          <td>Jan <input type="checkbox" ng-model="student1.isselected"/></td>
@@ -287,6 +287,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                    </div>
                                  </div>
 
                             </div>

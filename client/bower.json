@@ -54,6 +54,7 @@
     "install": "^1.0.4",
     "angular-ui-router": "1.0.3",
     "dirPagination": "1.0.0",
-    "smartwizard": "^4.2.2"
+    "smartwizard": "^4.2.2",
+    "bootstrap-slider": "*"
   }
 }

@@ -43,6 +43,7 @@ define(['./module'], function (controllers) {
 			  }
 
 			  $scope.create = function (res) {
+			  	$scope.resetEmp();
 			  	$scope.showaddform = true;
 			    $scope.editmode = true;
 			    $scope.addmode = true;
@@ -81,7 +82,7 @@ define(['./module'], function (controllers) {
  
 			    });
 			  }
-
+/*
 		$scope.emp = {
 				  signum: '',
 				  name: '',
@@ -95,8 +96,115 @@ define(['./module'], function (controllers) {
 				  approvedbyRNAMOSS : '', 
 				  currentStatus : '', 
 				  pool: ''
+				} */
+       // $scope.emps=[];
+
+          $scope.resetEmp = function (){
+
+	    	$scope.addform = {
+
+				  signum: '',
+
+				  name: '',
+
+				  jobStage: '',
+
+				  role: '',
+
+				  type: '',
+
+				  location: '',
+
+				  businessArea: '',
+
+				  subProduct : '',
+
+				  EGI_LM : '',
+
+				  approvedbyRNAMOSS : '', 
+
+				  currentStatus : '', 
+
+				  pool: ''
+
 				}
-        $scope.emps=[];
+
+	    }
+
+	    $scope.resetEmpUtz = function (){
+
+	    	$scope.addEmpUtzform = {
+
+				  signum: '',
+
+				  name: '',
+
+				  approvedbyRNAMOSS: '',
+
+				  CU: '',
+
+				  location: '',
+
+				  status: '',
+
+				  jan :'',
+
+				  feb :'',
+
+				  mar:'',
+
+				  may:'',
+
+				  apr:'',
+
+				  jun:'',
+
+				  jul:'',
+
+				  aug:'',
+
+				  sep:'',
+
+				  oct:'',
+
+				  nov:'',
+
+				  dec:''
+
+				}
+
+	    }
+
+
+$scope.resetprojectDetails = function (){
+
+	    	$scope.projectaddform = {
+
+				  projName: '',
+
+				  probOfDeal: '',
+
+				  region: '',
+
+				  manager: '',
+
+				  Director: '',
+
+				  start_dt: '',
+
+				  end_dt :'',
+
+				  remarks :'',
+
+				  status:'',
+
+				  EGIStaffing:'',
+
+				}
+
+	    }
+
+
                
         $scope.fetchAllEmps = function(){
               empServices.fetchAllEmps()
@@ -157,6 +265,7 @@ define(['./module'], function (controllers) {
 			   $scope.empUtzShoweditform = false;
 
 			  $scope.empUtzCreate = function (res) {
+			  	$scope.resetEmpUtz()
 			  	$scope.empUtzShowaddform = true;
 			    $scope.empUtzEditmode = true;
 			    $scope.empUtzAddmode = true;
@@ -176,7 +285,7 @@ define(['./module'], function (controllers) {
 			  }
  
 
-        $scope.empUtzs=[];
+        //$scope.empUtzs=[];
                
         $scope.fetchAllempUtz = function(){
               empUtzService.fetchAllempUtz().then(function (response) {
@@ -253,6 +362,7 @@ define(['./module'], function (controllers) {
 			   $scope.projectShoweditform = false;
 
 			  $scope.projectCreate = function (res) {
+			  	$scope.resetprojectDetails();
 			  	$scope.projectShowaddform = true;
 			    $scope.projectEditmode = true;
 			    $scope.projectAddmode = true;
